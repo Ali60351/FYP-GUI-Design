@@ -49,7 +49,7 @@
                 <a href="#" class="waves-effect waves-light btn">Start</a>
                 <a href="#" class="waves-effect waves-light btn">Stop</a>
                 <div class="footer">
-                    <p>Status: Inactive</p>
+                    <p>Status: {{ connectionState }}</p>
                 </div>
             </div>
             <div v-if="connectP" class="main-content">
@@ -89,7 +89,7 @@
                     <a href="#" v-on:click="searchDevices" class="waves-effect waves-light btn" style="width:100%;">Add a PC</a>
                 </div>
                 <div class="footer">
-                    <p>Status: Inactive</p>
+                    <p>Status: {{ connectionState }}</p>
                 </div>
             </div>
             <div v-if="bindingsP" class="main-content">
@@ -113,7 +113,7 @@
                     </table>
                 </div>
                 <div class="footer">
-                    <p>Status: Inactive</p>
+                    <p>Status: {{ connectionState }}</p>
                 </div>
             </div>
             <div v-if="selectingP" class="main-content">
@@ -139,7 +139,7 @@
                     <a href="#" v-on:click="connectClick" class="waves-effect waves-light btn" style="width:100%;">Back</a>
                 </div>
                 <div class="footer">
-                    <p>Status: Inactive</p>
+                    <p>Status: {{ connectionState }}</p>
                 </div>
             </div>
             <div v-if="securityP" class="main-content">
@@ -150,7 +150,7 @@
                 <p>SSL Encryption</p>
                 <button class="waves-effect waves-light btn" style="width: 80%;" v-on:click="toggleSSL"> {{ sslState }} </button>
                 <div class="footer">
-                    <p>Status: Inactive</p>
+                    <p>Status: {{ connectionState }}</p>
                 </div>
             </div>
         </div>

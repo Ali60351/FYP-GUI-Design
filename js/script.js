@@ -1,15 +1,16 @@
 var app = new Vue({
     el: '#app',
     data: {
-        selectingP: false,
-        loading: false,
+        selectingP: false, // Page Flags
         homeP: true,
         connectP: false,
         bindingsP: false,
         securityP: false,
+        loading: false,
         pcCount: 2,
         sslState: 'disabled',
-        selectList: [{
+        connectionState: 'Inactive',
+        selectList: [{ // DATA
                 name: 'Dell 123',
                 ip: '192.168.1.10'
             },
@@ -76,12 +77,11 @@ var app = new Vue({
         searchDevices: function () {
             this.connectP = false;
             this.selectingP = true;
+
+            // INSERT FUNCTION HERE
         },
         addSelected: function (item) {
-            this.connectedList.push({
-                name: item.name,
-                ip: item.ip
-            });
+            // INSERT FUNCTION HERE
         }
     }
 });
