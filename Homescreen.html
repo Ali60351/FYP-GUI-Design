@@ -9,7 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>OpenSourceSync</title>
 </head>
-
 <body>
     <div id="app" class="content">
         <div id="sidebar">
@@ -38,7 +37,6 @@
                 </div>
             </a>
         </div>
-
         <div class="main">
             <div v-if="homeP" class="main-content">
                 <div class="valign-wrapper">
@@ -53,16 +51,26 @@
                 </div>
             </div>
             <div v-if="connectP" class="main-content">
-                <p>Select number of PCs</p>
-                <select v-model="pcCount">
-                    <option disabled value="">Please select one</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
-
-                <div class="container">
+                <div class="fixed-content">
+                    <div v-if="connectedList.length > 0">
+                        <p>Rearrange Connected Devices</p>
+                        <div class="center-align">
+                            <ul v-sortable class="center-align row">
+                                <draggable v-model="connectedList">
+                                    <li style="margin-bottom:1%;" v-for="item in connectedList" class="col s2">
+                                        <i style="font-size: 3vw;" class="material-icons">desktop_windows</i>
+                                        <br/>
+                                        {{item.name}}
+                                        <br/>
+                                        {{item.ip}}
+                                        <br/>
+                                    </li>
+                                </draggable>
+                            </ul>
+                        </div>
+                    </div>
                     <br/>
+                    <p>List of Connected Devices</p>
                     <table class="highlight centered">
                         <thead>
                             <tr>

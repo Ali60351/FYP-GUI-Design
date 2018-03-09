@@ -18,6 +18,8 @@
   },
   "dependencies": {
     "global": "^4.3.2",
-    "jshint": "^2.9.5"
+    "jshint": "^2.9.5",
+    "sortablejs": "^1.7.0",
+    "vuedraggable": "^2.16.0"
   }
 }

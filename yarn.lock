@@ -846,6 +846,10 @@ sntp@2.x.x:
   dependencies:
     hoek "4.x.x"
 
+sortablejs@^1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/sortablejs/-/sortablejs-1.7.0.tgz#80a2b2370abd568e1cec8c271131ef30a904fa28"
+
 spdx-correct@~1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/spdx-correct/-/spdx-correct-1.0.2.tgz#4b3073d933ff51f3912f03ac5519498a4150db40"
@@ -994,6 +998,12 @@ verror@1.10.0:
 vue-devtools@^3.1.9:
   version "3.1.9"
   resolved "https://registry.yarnpkg.com/vue-devtools/-/vue-devtools-3.1.9.tgz#283b458c6853f569a987da0092e7c52e8243a436"
+
+vuedraggable@^2.16.0:
+  version "2.16.0"
+  resolved "https://registry.yarnpkg.com/vuedraggable/-/vuedraggable-2.16.0.tgz#52127081a2adb3de5fabd214d404ff3eee63575a"
+  dependencies:
+    sortablejs "^1.7.0"
 
 wrappy@1:
   version "1.0.2"

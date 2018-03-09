@@ -1,3 +1,8 @@
+// jshint esversion:6
+var draggable = require('vuedraggable');
+
+Vue.component('draggable', draggable);
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -7,7 +12,6 @@ var app = new Vue({
         bindingsP: false,
         securityP: false,
         loading: false,
-        pcCount: 2,
         sslState: 'disabled',
         connectionState: 'Inactive',
         selectList: [{ // DATA
@@ -28,15 +32,7 @@ var app = new Vue({
                 binding: 'Ctrl + V'
             }
         ],
-        connectedList: [{
-                name: 'Dell 123',
-                ip: '192.168.1.10'
-            },
-            {
-                name: 'HP 321',
-                ip: '192.168.1.11'
-            }
-        ]
+        connectedList: []
     },
     methods: {
         homeClick: function () {
@@ -81,7 +77,11 @@ var app = new Vue({
             // INSERT FUNCTION HERE
         },
         addSelected: function (item) {
-            // INSERT FUNCTION HERE
+            // if (!this.connectedList.includes(item)) {
+            //     this.connectedList.push(item);
+            // }
+
+            this.connectedList.push(item);
         }
     }
 });
