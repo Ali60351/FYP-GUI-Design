@@ -94,7 +94,7 @@
                             <div class="sk-cube3 sk-cube"></div>
                         </div>
                     </transition>
-                    <a href="#" v-on:click="searchDevices" class="waves-effect waves-light btn" style="width:100%;">Add a PC</a>
+                    <a href="#" v-on:click="searchDevices" class="waves-effect waves-light btn" style="width:100%;">Add or Remove a PC</a>
                 </div>
                 <div class="footer">
                     <p>Status: {{ connectionState }}</p>
@@ -139,7 +139,10 @@
                             <tr v-for="item in selectList">
                                 <td> {{item.name}} </td>
                                 <td> {{item.ip}} </td>
-                                <td><a href="#" class="waves-effect waves-light btn" v-on:click="addSelected(item)">Add</a></td>
+                                <td>
+                                  <a href="#" class="waves-effect waves-light btn" v-if="!(connectedList.includes(item))" v-on:click="addSelected(item)">Add</a>
+                                  <a href="#" class="waves-effect waves-light btn" v-if="connectedList.includes(item)" v-on:click="removeSelected(item)">Remove</a>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

@@ -82,6 +82,10 @@ var app = new Vue({
             // }
 
             this.connectedList.push(item);
+        },
+        removeSelected: function (item) {
+          var index = this.connectedList.indexOf(item);
+          this.connectedList.splice(index, 1);
         }
     }
 });
