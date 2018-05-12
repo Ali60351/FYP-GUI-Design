@@ -34,10 +34,9 @@ var app = new Vue({
       }
     ],
     connectedList: [],
-    filesBeingOfferedList: [],      //[fileID, path]
-    filesBeingAcceptedList: [],     //[fileID, path]
-    uiFilesAvailableList: [
-      {
+    filesBeingOfferedList: [], //[fileID, path]
+    filesBeingAcceptedList: [], //[fileID, path]
+    uiFilesAvailableList: [{
         filename: 'Alpha.txt',
         senderSystem: '123.123.123.123',
         fileID: '1337',
@@ -133,7 +132,7 @@ var app = new Vue({
         fileID: '1337',
         fileSize: '100000'
       }
-    ]        //[filename, senderSystem, fileID, fileSize]
+    ] //[filename, senderSystem, fileID, fileSize]
   },
   methods: {
     homeClick: function() {
