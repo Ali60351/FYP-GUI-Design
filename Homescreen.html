@@ -27,13 +27,19 @@
             <a href="#" v-on:click="bindingsClick" class="waves-effect waves-light btn">
                 <div class="bdiv">
                     <i class="material-icons">keyboard</i>
-                    <p>Key Bindings</p>
+                    <p>Shortcuts</p>
                 </div>
             </a>
             <a href="#" v-on:click="securityClick" class="waves-effect waves-light btn">
                 <div class="bdiv">
                     <i class="material-icons">security</i>
                     <p>Security</p>
+                </div>
+            </a>
+            <a href="#" v-on:click="downloadClick" class="waves-effect waves-light btn">
+                <div class="bdiv">
+                  <i class="material-icons">archive</i>
+                  <p>Downloads</p>
                 </div>
             </a>
         </div>
@@ -160,6 +166,32 @@
                 <br/>
                 <p>SSL Encryption</p>
                 <button class="waves-effect waves-light btn" style="width: 80%;" v-on:click="toggleSSL"> {{ sslState }} </button>
+                <div class="footer">
+                    <p>Status: {{ connectionState }}</p>
+                </div>
+            </div>
+            <div v-if="downloadP" class="main-content">
+                <div class="container" style="max-height: 75%; overflow-y: auto;">
+                    <br/>
+                    <table class="highlight centered">
+                        <thead>
+                            <tr>
+                                <th>Filename</th>
+                                <th>Size</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="item in uiFilesAvailableList">
+                                <td> {{item.filename}} </td>
+                                <td> {{item.fileSize}} </td>
+                                <td>
+                                  <a href="#" class="waves-effect waves-light btn" v-on:click="downloadSelected(item)">Save</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="footer">
                     <p>Status: {{ connectionState }}</p>
                 </div>
